@@ -18,7 +18,7 @@
         android:layout_marginTop="40dp">
 
         <LinearLayout
-            android:id="@+id/form_input"
+            android:id="@+id/form_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -74,7 +74,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/contact_recycle_container"
+                android:id="@+id/booking_recycle_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/sentence"
@@ -82,7 +82,7 @@
                 android:orientation="vertical">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycle_contact"
+                    android:id="@+id/recycle_booking"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
