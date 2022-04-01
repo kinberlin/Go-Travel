@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/BackgroundC"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/container_input"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="40dp"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:id="@+id/form_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/fomtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="From"
+                    android:textSize="19sp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/white"/>
+
+                <EditText
+                    android:id="@+id/from_input"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/bg_input_reservation"
+                    android:drawablePadding="20dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/to_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:layout_alignParentEnd="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/totext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To"
+                    android:textSize="19sp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/white"/>
+
+                <EditText
+                    android:id="@+id/To_input"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    android:background="@drawable/bg_input_reservation"
+                    android:drawablePadding="20dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/date_input_cont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/datetext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:textSize="19sp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/white"/>
+
+                <EditText
+                    android:id="@+id/date_input"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_input_reservation"
+                    android:drawableStart="@drawable/date"
+                    android:paddingStart="20dp"
+                    android:drawablePadding="20dp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/container_input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bc_corners_part"
+            android:elevation="15dp">
+
+            <LinearLayout
+                android:id="@+id/sentence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_marginStart="17dp"
+                android:layout_marginEnd="17dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Agences available"
+                    android:textSize="23sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/agence_recycle_container"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/sentence"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycle_agence_available"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sentence_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/agence_recycle_container"
+                android:layout_marginStart="17dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Trajets available Of It"
+                    android:textSize="23sp"
+                    android:layout_marginTop="17dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/agence_recycle_detail_ct"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_below="@id/sentence_2"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycle_agence_available_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="8dp"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</LinearLayout>

@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/USER/source/repos/GO-Travel/app/src/main/res/drawable-v24/search_bg.xml" value="0.196" />
+        <entry key="..\:/Users/USER/source/repos/GO-Travel/app/src/main/res/drawable/bc_corners_part.xml" value="0.196" />
+        <entry key="..\:/Users/USER/source/repos/GO-Travel/app/src/main/res/drawable/bg_btnadd.xml" value="0.196" />
+        <entry key="..\:/Users/USER/source/repos/GO-Travel/app/src/main/res/drawable/bg_input_reservation.xml" value="0.196" />
+        <entry key="..\:/Users/USER/source/repos/GO-Travel/app/src/main/res/drawable/bg_resulte.xml" value="0.1" />
+        <entry key="..\:/Users/USER/source/repos/GO-Travel/app/src/main/res/drawable/date.xml" value="0.1" />
+        <entry key="..\:/Users/USER/source/repos/GO-Travel/app/src/main/res/drawable/input_destination.xml" value="0.1" />
+        <entry key="..\:/Users/USER/source/repos/GO-Travel/app/src/main/res/drawable/mybooking.xml" value="0.1" />
+        <entry key="..\:/Users/USER/source/repos/GO-Travel/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/USER/source/repos/GO-Travel/app/src/main/res/layout/available_trajet_row_item.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/USER/source/repos/GO-Travel/app/src/main/res/layout/fragment_home_page.xml" value="0.1" />
+        <entry key="..\:/Users/USER/source/repos/GO-Travel/app/src/main/res/layout/my_booking.xml" value="0.1" />
+        <entry key="..\:/Users/USER/source/repos/GO-Travel/app/src/main/res/layout/my_booking_row_item.xml" value="0.5" />
+        <entry key="..\:/Users/USER/source/repos/GO-Travel/app/src/main/res/layout/my_contact.xml" value="0.22" />
+        <entry key="..\:/Users/USER/source/repos/GO-Travel/app/src/main/res/layout/reservation_search.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/USER/source/repos/GO-Travel/app/src/main/res/layout/result_agence_row_item.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/USER/source/repos/GO-Travel/app/src/main/res/layout/result_row_item.xml" value="0.1" />
+        <entry key="..\:/Users/USER/source/repos/GO-Travel/app/src/main/res/layout/search_reservation.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

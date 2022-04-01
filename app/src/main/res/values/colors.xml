@@ -14,4 +14,6 @@
     <color  name="BackgroundC">#6D6DF1</color>
     <color name="gray">#4F4E4E</color>
         <color name="btn_otp">#9393FF</color>
+    <color name="Price_color">#0DF06B</color>
+    <color name="search_input">#9393FF</color>
 </resources>
