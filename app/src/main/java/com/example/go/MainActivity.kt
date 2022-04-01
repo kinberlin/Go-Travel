@@ -21,6 +21,12 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.idFragments, DefaultMain)
                 commit()
+
         }
+    }
+    fun LoginStart()
+    {
+        startActivity(Intent(this,Flashscreen::class.java))
+        finish()
     }
 }
