@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    //Premier Menu Pour l'userActions
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/menu_home"
+            android:icon="@drawable/home"
+            android:title="Home"/>
+
+        <item android:id="@+id/menu_myBooking"
+            android:title="My Booking"
+            android:icon="@drawable/mybooking"/>
+
+        <item android:id="@+id/menu_Book"
+            android:title="Book now"
+            android:icon="@drawable/book"/>
+
+        <item android:id="@+id/menu_contact"
+            android:title="Contact"
+            android:icon="@drawable/contact"/>
+
+    </group>
+
+    //second Menu POUR AUTHENTIFICATION
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="Authentification">
+
+            <menu>
+
+                <item
+                    android:id="@+id/menu_logout"
+                    android:title="Logout"
+                    android:icon="@drawable/logout"/>
+
+            </menu>
+
+        </item>
+    </group>
+
+    //Troisieme Menu Shared
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="Shared">
+
+            <menu>
+
+                <item
+                    android:id="@+id/menu_Shared"
+                    android:title="Share"
+                    android:icon="@drawable/share"/>
+
+            </menu>
+
+        </item>
+    </group>
+
+</menu>
