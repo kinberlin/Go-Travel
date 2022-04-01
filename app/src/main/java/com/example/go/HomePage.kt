@@ -34,6 +34,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class HomePage : Fragment() {
     // TODO: Rename and change types of parameters
+    lateinit var auth: FirebaseAuth
     private var param1: String? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
@@ -78,8 +79,9 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
             auth= FirebaseAuth.getInstance()
             var currentUser=auth.currentUser
             auth.signOut()
-            startActivity(Intent(this,Flashscreen::class.java))
-            finish()
+            var Mains = MainActivity()
+            Mains.LoginStart()
+
         }
 
     }
@@ -114,7 +116,6 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
         Cadapter.setOnClickListener(object : CompanyAdapter.OnItemClickListener {
 
             override fun onItemClick(position: Int) {
-                idCompanyName.text = "Nom : "+ Companies[position].name
                 idCompanyDescription.text = "Description : "+ Companies[position].Description
             }
         })
