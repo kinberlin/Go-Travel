@@ -75,7 +75,7 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:paddingStart="16dp"
-                    android:text="Search Destination"
+                    android:hint="Search Destination"
                     android:textColor="#62878F"
                     app:layout_constraintEnd_toEndOf="@+id/imageView"
                     app:layout_constraintStart_toStartOf="@+id/textView2"
@@ -135,9 +135,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
+                        android:paddingStart="10dp"
                         android:text="Decription :"
                         android:textColor="@color/black"
                         android:textStyle="normal"
+                        android:fontFamily="@font/roboto_bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
@@ -219,6 +221,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
                         android:text="Nom Ville : "
+                        android:fontFamily="@font/roboto_bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
 
@@ -229,6 +232,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
                         android:text="Nom Region : "
+                        android:fontFamily="@font/roboto_bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/idVilleNom" />
 
@@ -239,6 +243,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
                         android:text="Description :"
+                        android:fontFamily="@font/roboto_bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/idVilleNomRegion" />
 
@@ -247,5 +252,7 @@
             </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
+
+
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
