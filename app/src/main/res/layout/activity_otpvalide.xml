@@ -49,7 +49,9 @@
                 android:text="Verifaction of the digit Code"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"/>
 
         </RelativeLayout>
 
@@ -71,7 +73,8 @@
                 android:text="Ckeck it in your messages App"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="13sp" />
+                android:textSize="13sp"
+                android:gravity="center"/>
 
             <Button
                 android:id="@+id/btnOTP"

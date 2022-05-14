@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/BackgroundC">
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -45,14 +47,11 @@
 
         </RelativeLayout>
 
-
-
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="300dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/bc_corners_part"
-            android:elevation="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,18 +67,17 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycle_contact"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
 
             </LinearLayout>
 
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
                 android:layout_below="@+id/contact_recycle_container"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="44dp"
-                android:layout_marginBottom="91dp">
+                android:layout_marginTop="34dp"
+                android:layout_marginBottom="90dp">
 
                 <TextView
                     android:layout_width="300dp"
@@ -95,6 +93,7 @@
                     android:gravity="center"
                     android:text="ADD"
                     android:textAlignment="center"
+                    android:textColor="@color/hicolor"
                     android:textSize="23sp" />
 
                 <Button
@@ -112,9 +111,11 @@
             </RelativeLayout>
 
         </RelativeLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
 
 </LinearLayout>
+</ScrollView>

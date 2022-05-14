@@ -22,8 +22,12 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="580dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:background="@color/BackgroundC"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -54,32 +58,126 @@
                     app:layout_constraintStart_toStartOf="@+id/textView"
                     app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="64dp"
-                    android:layout_height="48dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginEnd="16dp"
+                <RelativeLayout
+                    android:id="@+id/container_input"
+                    android:layout_width="405dp"
+                    android:layout_height="417dp"
+                    android:layout_marginTop="104dp"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@android:drawable/sym_def_app_icon" />
+                    tools:ignore="MissingConstraints">
 
-                <EditText
-                    android:id="@+id/editTextTextPersonName"
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="32dp"
-                    android:background="@drawable/search_bg"
-                    android:drawableLeft="@drawable/ic_baseline_search_24"
-                    android:drawablePadding="16dp"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:paddingStart="16dp"
-                    android:hint="Search Destination"
-                    android:textColor="#62878F"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView"
-                    app:layout_constraintStart_toStartOf="@+id/textView2"
-                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                    <LinearLayout
+                        android:id="@+id/form_input"
+                        android:layout_width="165dp"
+                        android:layout_height="86dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toStartOf="@+id/to_input"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/fomtext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="From"
+                            android:textColor="@color/white"
+                            android:textSize="19sp" />
+
+                        <EditText
+                            android:id="@+id/from_input"
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="6dp"
+                            android:background="@drawable/bg_input_reservation"
+                            android:drawablePadding="20dp"
+                            android:hint="departtown"
+                            android:textAlignment="center" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/to_input"
+                        android:layout_width="182dp"
+                        android:layout_height="81dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="41dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/totext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="To"
+                            android:textColor="@color/white"
+                            android:textSize="19sp" />
+
+                        <EditText
+                            android:id="@+id/To_input"
+                            android:layout_width="150dp"
+                            android:layout_height="57dp"
+                            android:background="@drawable/bg_input_reservation"
+                            android:drawablePadding="0dp"
+                            android:hint="arrivaltown"
+                            android:textAlignment="center" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/date_input_cont"
+                        android:layout_width="400dp"
+                        android:layout_height="400dp"
+                        android:layout_below="@+id/form_input"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="-6dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/datetext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="Date"
+                            android:textColor="@color/white"
+                            android:textSize="19sp" />
+
+                        <CalendarView
+                            android:id="@+id/date_input"
+                            android:layout_width="400dp"
+                            android:layout_height="300dp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/searchtrip"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/bg_input_reservation"
+                    android:text="Rechercher"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.471"
+                    app:layout_constraintStart_toStartOf="parent"></Button>
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.cardview.widget.CardView
@@ -117,7 +215,7 @@
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/idCompanyList"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"
@@ -135,11 +233,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
+                        android:fontFamily="@font/roboto_bold"
                         android:paddingStart="10dp"
                         android:text="Decription :"
-                        android:textColor="@color/black"
                         android:textStyle="normal"
-                        android:fontFamily="@font/roboto_bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
@@ -148,8 +245,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
-                        android:text="Agence les plus utilisés"
-                        android:textSize="12sp"
+                        android:text="Societes les plus utilisees "
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -185,19 +282,20 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="5dp"
+                        android:fontFamily="@font/roboto_bold"
                         android:text="Destination les plus connues"
                         android:textSize="12sp"
-                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <HorizontalScrollView
                         android:id="@+id/horizontalScrollView2"
-                        android:layout_width="413dp"
+                        android:layout_width="match_parent"
                         android:layout_height="220dp"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
@@ -214,38 +312,51 @@
 
                     </HorizontalScrollView>
 
-                    <TextView
-                        android:id="@+id/idVilleNom"
-                        android:layout_width="wrap_content"
-                        android:layout_height="19dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Nom Ville : "
-                        android:fontFamily="@font/roboto_bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
-
-                    <TextView
-                        android:id="@+id/idVilleNomRegion"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Nom Region : "
-                        android:fontFamily="@font/roboto_bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/idVilleNom" />
-
-                    <TextView
-                        android:id="@+id/idVilleDescription"
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
-                        android:text="Description :"
-                        android:fontFamily="@font/roboto_bold"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/idVilleNomRegion" />
+                        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2">
+
+                        <TextView
+                            android:id="@+id/idVilleNom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="19dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="Nom Ville : "
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/idVilleNomRegion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/idVilleNom"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="Nom Region : "
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/idVilleNom" />
+
+                        <TextView
+                            android:id="@+id/idVilleDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/idVilleNomRegion"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginTop="26dp"
+                            android:layout_marginEnd="10dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="Description : Lorem Ipsums ............................................"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                    </RelativeLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -256,3 +367,277 @@
 
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:context=".MainActivity">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="0dp"
+                    android:background="@color/BackgroundC"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="24dp"
+                        android:fontFamily="@font/roboto_thin"
+                        android:text="Find Your"
+                        android:textColor="#ffffff"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_thin"
+                        android:text="Next Destination"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="@+id/textView"
+                        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="64dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+
+                    <EditText
+                        android:id="@+id/editTextTextPersonName"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="32dp"
+                        android:background="@drawable/search_bg"
+                        android:drawableLeft="@drawable/ic_baseline_search_24"
+                        android:drawablePadding="16dp"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:paddingStart="16dp"
+                        android:hint="Search Destination"
+                        android:textColor="#62878F"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView"
+                        app:layout_constraintStart_toStartOf="@+id/textView2"
+                        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/constraintLayout"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:background="@drawable/rounded_shapes"
+                    app:cardBackgroundColor="@color/cardview_light_background"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp"
+                    app:cardMaxElevation="0dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <HorizontalScrollView
+                            android:id="@+id/horizontalScrollView"
+                            android:layout_width="match_parent"
+                            android:layout_height="152dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="24dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/idCompanyList"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:orientation="horizontal"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                        </HorizontalScrollView>
+
+                        <TextView
+                            android:id="@+id/idCompanyDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="10dp"
+                            android:text="Decription :"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/roboto_bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Agence les plus utilisés"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="600dp"
+                    android:layout_below="@+id/constraintLayout"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="250dp"
+                    android:layout_marginEnd="0dp"
+                    android:background="@drawable/rounded_shapes"
+                    app:cardBackgroundColor="@color/cardview_light_background"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp"
+                    app:cardMaxElevation="0dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Destination les plus connues"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/roboto_bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <HorizontalScrollView
+                            android:id="@+id/horizontalScrollView2"
+                            android:layout_width="413dp"
+                            android:layout_height="220dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/idTownList"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginEnd="15dp"
+                                android:orientation="horizontal"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                        </HorizontalScrollView>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="25dp">
+
+                            <TextView
+                                android:id="@+id/idVilleNom"
+                                android:layout_width="wrap_content"
+                                android:layout_height="19dp"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Nom Ville : "
+                                android:fontFamily="@font/roboto_bold"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/idVilleNomRegion"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Nom Region : "
+                                android:fontFamily="@font/roboto_bold"
+                                android:layout_below="@id/idVilleNom"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/idVilleNom" />
+
+                            <TextView
+                                android:id="@+id/idVilleDescription"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/idVilleNomRegion"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="15dp"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="Description :"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                        </RelativeLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    -->

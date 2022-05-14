@@ -7,6 +7,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.go.R
+/*
+
+*/
+/*
 
 class CompanyAdapter(private val mList: List<CompagnieTransport>) : RecyclerView.Adapter<CompanyAdapter.ViewHolder>() {
 
@@ -28,8 +32,14 @@ class CompanyAdapter(private val mList: List<CompagnieTransport>) : RecyclerView
 
 //for(x in mList){
         // sets the image to the imageview from our itemHolder class
-        /*var bmp : Bitmap = BitmapFactory.decodeByteArray(mList[Position].image,0,mList[Position].image!!.size)
-        holder.imageView.setImageBitmap(bmp)*/
+        *//*
+
+*/
+/*var bmp : Bitmap = BitmapFactory.decodeByteArray(mList[Position].image,0,mList[Position].image!!.size)
+        holder.imageView.setImageBitmap(bmp)*//*
+*/
+/*
+
         holder.imageView.setImageResource(mList[Position].logo)
         // sets the text to the textview from our itemHolder class
         //holder.textname.text = " Nom : "+mList[Position].name +"/n Nombre de Destinations : " +mList[Position].nombre_Destination
@@ -63,6 +73,10 @@ class CompanyAdapter(private val mList: List<CompagnieTransport>) : RecyclerView
         fun onItemClick(position: Int)
     }
 }
+*//*
+
+*/
+/*
 class TownAdapter(private val mList: List<Ville>) : RecyclerView.Adapter<TownAdapter.ViewHolder>() {
 
     private lateinit var mListener : OnItemClickListener
@@ -83,8 +97,22 @@ class TownAdapter(private val mList: List<Ville>) : RecyclerView.Adapter<TownAda
 
 //for(x in mList){
         // sets the image to the imageview from our itemHolder class
-        /*var bmp : Bitmap = BitmapFactory.decodeByteArray(mList[Position].image,0,mList[Position].image!!.size)
-        holder.imageView.setImageBitmap(bmp)*/
+        *//*
+*/
+/*
+
+*//*
+
+*/
+/*var bmp : Bitmap = BitmapFactory.decodeByteArray(mList[Position].image,0,mList[Position].image!!.size)
+        holder.imageView.setImageBitmap(bmp)*//*
+*/
+/*
+*//*
+
+*/
+/*
+
         holder.imageView.setImageResource(mList[Position].image)
         // sets the text to the textview from our itemHolder class
         holder.textname.text = " Nom : "+mList[Position].image
@@ -115,4 +143,9 @@ class TownAdapter(private val mList: List<Ville>) : RecyclerView.Adapter<TownAda
     interface OnItemClickListener {
         fun onItemClick(position: Int)
     }
-}
+}*//*
+
+*/
+/*
+
+*/

@@ -17,89 +17,103 @@
 
       <RelativeLayout
           android:layout_width="280dp"
-          android:layout_height="100dp"
+          android:layout_height="wrap_content"
           android:layout_marginBottom="20dp">
-<TextView
-    android:id="@+id/heure_depart"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="9:59"
-    android:fontFamily="@font/roboto_bold"
-    android:layout_marginStart="20dp"
-    android:textSize="19sp"
-    android:textColor="@color/black"/>
 
           <TextView
-              android:id="@+id/agence_depart"
+              android:id="@+id/heure_depart_t"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_below="@id/heure_depart"
+              android:layout_marginStart="20dp"
+              android:fontFamily="@font/roboto_bold"
+              android:text="9:59"
+              android:textColor="@color/black"
+              android:textSize="19sp" />
+
+          <TextView
+              android:id="@+id/agence_depart_t"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/heure_depart_t"
+              android:layout_marginStart="20dp"
+              android:fontFamily="@font/roboto_bold"
               android:text="Buca sadi"
-              android:fontFamily="@font/roboto_bold"
-              android:textSize="19sp"
-              android:layout_marginStart="20dp"
-              android:textColor="@color/black"/>
+              android:textColor="@color/black"
+              android:textSize="19sp" />
 
 
           <TextView
-              android:id="@+id/heure_arrive"
+              android:id="@+id/heure_arrive_t"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_alignParentEnd="true"
               android:layout_marginEnd="55dp"
+              android:fontFamily="@font/roboto_bold"
               android:text="13:45"
-              android:fontFamily="@font/roboto_bold"
-              android:textSize="19sp"
-              android:textColor="@color/black"/>
+              android:textColor="@color/black"
+              android:textSize="19sp" />
 
 
           <TextView
-              android:id="@+id/agence_arrive"
+              android:id="@+id/agence_arrive_t"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_marginEnd="55dp"
-              android:layout_below="@id/heure_arrive"
+              android:layout_below="@id/heure_arrive_t"
               android:layout_alignParentEnd="true"
+              android:layout_marginEnd="55dp"
+              android:fontFamily="@font/roboto_bold"
               android:text="Buca Bastos"
-              android:fontFamily="@font/roboto_bold"
-              android:textSize="19sp"
-              android:textColor="@color/black"/>
+              android:textColor="@color/black"
+              android:textSize="19sp" />
 
 
           <TextView
-              android:id="@+id/price_trajet"
+              android:id="@+id/price_trajet_t"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_marginStart="20dp"
-              android:layout_below="@id/agence_arrive"
+              android:layout_below="@id/agence_arrive_t"
               android:layout_alignParentStart="true"
+              android:layout_marginStart="20dp"
+              android:fontFamily="@font/roboto_bold"
               android:text="2000$"
-              android:fontFamily="@font/roboto_bold"
-              android:textSize="19sp"
-              android:textColor="@color/Price_color"/>
+              android:textColor="@color/Price_color"
+              android:textSize="19sp" />
 
 
           <TextView
-              android:id="@+id/class_bus"
+              android:id="@+id/class_bus_t"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_marginStart="20dp"
-              android:layout_below="@id/price_trajet"
+              android:layout_below="@id/price_trajet_t"
               android:layout_alignParentStart="true"
-              android:text="VIP"
+              android:layout_marginStart="20dp"
               android:fontFamily="@font/roboto_bold"
-              android:textSize="19sp"
-              android:textColor="@color/Price_color"/>
+              android:text="VIP"
+              android:textColor="@color/Price_color"
+              android:textSize="19sp" />
+
+          <TextView
+              android:id="@+id/nbr_place_bus_t"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/class_bus_t"
+              android:layout_alignParentStart="true"
+              android:layout_marginStart="20dp"
+              android:fontFamily="@font/roboto_bold"
+              android:text="35 places"
+              android:textColor="@color/Price_color"
+              android:textSize="19sp" />
 
       </RelativeLayout>
+
       <Button
-          android:id="@+id/start_reservation"
+          android:id="@+id/start_reservation_t"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="Book now"
-          android:textColor="@color/white"
+          android:layout_marginTop="20dp"
           android:background="@drawable/bg_input_reservation"
-          android:layout_marginTop="20dp"/>
+          android:text="Ouvert"
+          android:textColor="@color/white" />
 
   </LinearLayout>
 

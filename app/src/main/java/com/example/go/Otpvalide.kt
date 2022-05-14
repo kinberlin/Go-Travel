@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.go.Models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.PhoneAuthCredential
@@ -22,30 +23,40 @@ class Otpvalide : AppCompatActivity() {
         auth=FirebaseAuth.getInstance()
 
         val storedVerificationId=intent.getStringExtra("storedVerificationId")
-
+    val phonenumber = intent.getStringExtra("phone")
         var btnotp = findViewById<Button>(R.id.btnOTP)
         val otpGiven=findViewById<EditText>(R.id.id_otp)
+
+        var user = User(phonenumber ?: " ")
+        var te = user.Authenticate(phonenumber ?: " " ).isEmpty()
+        if(te){
+            user.postUser();
+        }
 
         btnotp.setOnClickListener {
             var otp = otpGiven.text.toString()
             if(!otp.isEmpty()){
                 val credential : PhoneAuthCredential = PhoneAuthProvider.getCredential(
                     storedVerificationId.toString(), otp)
-                signInWithPhoneAuthCredential(credential)
+                signInWithPhoneAuthCredential(credential,phonenumber ?: "" )
 
             }else{
                 Toast.makeText(this,"Enter OTP",Toast.LENGTH_SHORT).show()
             }
         }
+        Thread.sleep(500L)
     }
 
-    private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
+    private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential,phonenumber : String) {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this, "Succesfull", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(applicationContext, Slogan::class.java))
-                    finish()
+
+                        Toast.makeText(this, "Succesfull", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(applicationContext, Slogan::class.java))
+                        finish()
+                        //Toast.makeText(this, "Create an account to continue", Toast.LENGTH_SHORT).show()
+                       // var user = User(auth.currentUser!!.phoneNumber!!)
 // ...
                 } else {
 // Sign in failed, display a message and update the UI

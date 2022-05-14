@@ -1,23 +1,28 @@
 package com.example.go
 
-import android.content.Context
-
 import android.content.Intent
-import android.content.res.Configuration
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
+import kotlinx.android.synthetic.main.fragment_home_page.*
+
 import android.net.Uri
 import android.os.Bundle
+import kotlinx.serialization.json.Json
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CalendarView
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.go.Adapters.CompanyList
+import com.example.go.Adapters.TownAdapter
+import com.example.go.Models.Town
+import com.example.go.Models.Transport_company
+import com.example.go.Models.Travel
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.fragment_home_page.*
+import kotlinx.android.synthetic.main.fragment_home_page.view.*
+import kotlinx.serialization.encodeToString
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,22 +38,20 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class HomePage : Fragment() {
+
+
     // TODO: Rename and change types of parameters
     lateinit var auth: FirebaseAuth
     private var param1: String? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
-    lateinit  var Cadapter : CompanyAdapter
+    lateinit  var Cadapter : CompanyList
     lateinit var  Tadapter : TownAdapter
-    var TownLists = mutableListOf<Ville>(
-        Ville(R.drawable.f13,"Jardin Botannique", "Le jardin botannique, creer en 1986 est un des sites touristiques les plus belles du Cameroun.","Sud Ouest")
-    , Ville(R.drawable.f19,"Plage de Limbe", "Besoin de vacance, d'eau, de sable, de nature .... /n Bienvenue a la plage de Limbe.","Sud Ouest"),
-        Ville(R.drawable.f20,"Plage de Kribi", "Vous aimer vous bronzer sur le sable, les noix de coco et les courant d'air frais ? /n Passer des vacances pacifiques","Sud Ouest")
-    , Ville(R.drawable.f21,"Plage de Kribi", "Vous aimer vous bronzer sur le sable, les noix de coco et les courant d'air frais ? /n Passer des vacances pacifiques","Sud Ouest")
-    ,Ville(R.drawable.f22,"Montagnes de Bangou", "Vous aimer l'altitude et les vus en hauteur, /n Bienvenu a Bangou et profiter de l'altitude","Ouest")
-    ,Ville(R.drawable.f23,"Baie de Bertoua", "Aventurer vous aux coeurs des forets et montagnes et poser les yeux sur le  crystale bleu de bertoua","Est")
-        ,Ville(R.drawable.f24,"Montagnes de Bangou", "Vous aimer l'altitude et les vus en hauteur, /n Bienvenu a Bangou et profiter de l'altitude","Ouest")
-    )
+
+    var TownLists = mutableListOf<Town>(
+        Town("Jardin Botannique", "Cameroun")
+    , Town("Plage de Limbe", "Limbe")
+       )
     var Companies = mutableListOf<CompagnieTransport>(
         CompagnieTransport(R.drawable.busa,"General Express",356,"AGence de voyage sure"),
         CompagnieTransport(R.drawable.busb,"Menoua Voyage",168,"L'ouest est keur domaine"),
@@ -64,6 +67,7 @@ class HomePage : Fragment() {
         }
     }*/
 override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    var Mains = MainActivity()
     when(item.itemId)
     {
         R.id.menu_home ->
@@ -75,14 +79,20 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
             ).show()
         }
         R.id.menu_logout ->
-        {
-            auth= FirebaseAuth.getInstance()
-            var currentUser=auth.currentUser
-            auth.signOut()
-            var Mains = MainActivity()
-            Mains.LoginStart()
+        { //var currentUser=auth.currentUser
+
+            Mains.signoout()
 
         }
+        R.id.menu_contact ->{
+            //startActivity(Intent(this,MyContactlist::class.java), bundleOf())
+        }
+
+        R.id.menu_myBooking ->{
+            activity?.let{
+                var intents = Intent(context,Booking_history::class.java)
+                startActivity(intents, bundleOf())
+            }}
 
     }
     return super.onOptionsItemSelected(item)
@@ -96,32 +106,88 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        var daydate : String = "30-4-2022"
+        date_input.setOnDateChangeListener(CalendarView.OnDateChangeListener { view, year, month, dayOfMonth ->
+            daydate = dayOfMonth.toString() +"-"+(month + 1).toString() + "-" +year.toString()
+        })
+        val TownArray = Town("Jardin Botannique", "Cameroun").getallTown()
 
-        Tadapter = TownAdapter(TownLists)
+        Tadapter = TownAdapter(TownArray)
         idTownList.adapter = Tadapter
-        idTownList.layoutManager = GridLayoutManager(context,TownLists.size)
 
-        Cadapter = CompanyAdapter(Companies)
+        if(TownArray.size == 0)
+        {
+
+            idTownList.layoutManager = GridLayoutManager(context,10)
+
+        }
+        else{
+
+            idTownList.layoutManager = GridLayoutManager(context,TownArray.size)
+
+        }
+        var voyages = mutableListOf<Travel>()
+
+        var companydesc= Transport_company().getAllTranport_companysattributes()
+
+
+        Cadapter = CompanyList(companydesc)
         idCompanyList.adapter = Cadapter
-        idCompanyList.layoutManager = GridLayoutManager(context,Companies.size)
 
+        if(companydesc.size == 0)
+        {
+
+            idCompanyList.layoutManager = GridLayoutManager(context,10)
+
+        }
+        else
+        {
+
+            idCompanyList.layoutManager = GridLayoutManager(context, companydesc.size)
+
+        }
+        /*var fil = File(context!!.filesDir, "travels")
+        if(fil.exists()) {
+            val fist: FileInputStream = FileInputStream(File(context!!.filesDir, "travels"))
+            val `ist` = ObjectInputStream(fist)
+            var restr = `ist`.readObject() as String
+            voyages = Json.decodeFromString(restr) as MutableList<Travel>
+            `ist`.close()
+            fist.close()
+        }*/
+        searchtrip.setOnClickListener{
+            activity?.let{
+                //voyages = Travel().SearchTravels(from_input.text.toString(),To_input.text.toString(),daydate)
+                print("")
+                var intent = Intent(it,reservation_search::class.java)
+                var vlList : String = Json.encodeToString(voyages)
+                intent.putExtra("departure_town",from_input.text.toString() )
+                intent.putExtra("arrival_town", To_input.text.toString())
+                intent.putExtra("departure_date", daydate)
+                intent.putExtra("vl", vlList);
+                activity?.let{
+                Toast.makeText(context, "Resultats en cours de chargement ...", Toast.LENGTH_LONG).show()}
+                startActivity(intent)
+            }
+        }
         Tadapter.setOnClickListener(object : TownAdapter.OnItemClickListener {
 
             override fun onItemClick(position: Int) {
-                idVilleDescription.text ="Description : "+ TownLists[position].Desecription.toString()
-                idVilleNom.text = "Nom : "+TownLists[position].name.toString()
-                idVilleNomRegion.text = "Region : "+ TownLists[position].region
+                //idVilleDescription.text ="Description : "+ TownLists[position].Desecription.toString()
+                idVilleNom.text = "Nom : "+TownArray[position].town_name.toString()
+                idVilleNomRegion.text = "Region : "+ TownArray[position].county_name
             }
         })
-        Cadapter.setOnClickListener(object : CompanyAdapter.OnItemClickListener {
+        Cadapter.setOnClickListener(object : CompanyList.OnItemClickListener {
 
             override fun onItemClick(position: Int) {
-                idCompanyDescription.text = "Description : "+ Companies[position].Description
+
+                idCompanyDescription.text = "Description : "+ companydesc[position].description
             }
         })
+        Thread.sleep(1000L)
         super.onViewCreated(view, savedInstanceState)
     }
-
     // TODO: Rename method, update argument and hook method into UI event
    /* fun onButtonPressed(uri: Uri) {
         listener?.onFragmentInteraction(uri)

@@ -5,23 +5,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="350dp"
+        android:layout_height="244dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
+        android:orientation="vertical"
         android:paddingStart="60dp"
-        android:orientation="vertical">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
             android:layout_width="200dp"
             android:layout_height="150dp"
-            app:cardCornerRadius="20dp"
-            android:layout_marginTop="30dp"
             android:layout_marginStart="8dp"
-            android:elevation="17dp">
+            android:layout_marginTop="30dp"
+            android:elevation="17dp"
+            app:cardCornerRadius="20dp">
 
             <ImageView
                 android:id="@+id/agence_profile"
@@ -30,17 +30,19 @@
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/profil_bus" />
         </androidx.cardview.widget.CardView>
+
         <TextView
             android:id="@+id/agence_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="8dp"
-            android:text="buca voyage"
-            android:textAlignment="center"
-            android:textSize="23sp"
             android:fontFamily="@font/roboto_bold"
             android:gravity="center"
-            android:layout_marginStart="40dp"/>
+            android:text="buca voyage"
+            android:textAlignment="center"
+            android:textSize="23sp" />
+
 
     </LinearLayout>
 

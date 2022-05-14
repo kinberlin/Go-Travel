@@ -1,98 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/BackgroundC">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/BackgroundC"
+    tools:context=".Booking_history">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    <RelativeLayout
-        android:id="@+id/container_input"
-        android:layout_width="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/form_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/fomtext"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/bg_input_reservation"
-                android:drawablePadding="10dp"
-                android:fontFamily="@font/roboto_bold"
-                android:paddingStart="20dp"
-                android:text="My Booking"
-                android:textColor="@color/white"
-                android:textSize="54sp" />
-        </LinearLayout>
-
-
-    </RelativeLayout>
-
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/bc_corners_part"
-            android:elevation="15dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/container_input">
+            android:layout_height="match_parent">
 
-            <LinearLayout
-                android:id="@+id/sentence"
+
+            <RelativeLayout
+                android:id="@+id/container_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="17dp"
-                android:layout_marginTop="18dp"
-                android:layout_marginEnd="17dp">
+                android:layout_marginTop="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/form_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Booking statuts"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="23sp" />
-            </LinearLayout>
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/booking_recycle_container"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@id/sentence"
+                    <TextView
+                        android:id="@+id/fomtext"
+                        android:layout_width="350dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_input_reservation"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:paddingStart="20dp"
+                        android:textAlignment="center"
+                        android:text="My Booking"
+                        android:textColor="@color/white"
+                        android:textSize="40sp" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="396dp"
+                android:layout_height="400dp"
                 android:layout_marginTop="30dp"
-                android:orientation="vertical">
+                android:background="@drawable/bc_corners_part"
+                android:elevation="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/container_input">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycle_booking"
+                <LinearLayout
+                    android:id="@+id/sentence"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="17dp">
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Booking List"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="26sp" />
+                </LinearLayout>
 
-        </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/booking_recycle_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/sentence"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="0dp"
+                    android:orientation="vertical">
 
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycle_booking"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
 
-
-
-</LinearLayout>
+                <TextView
+                    android:id="@+id/desole"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/sentence"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginEnd="-11dp"
+                    android:layout_marginBottom="-29dp"
+                    android:text="Desole! Vous n'avez pas encore effectuer de reservation"
+                    android:textAlignment="center"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

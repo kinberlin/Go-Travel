@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    //Premier Menu Pour l'userActions
+   <!-- //Premier Menu Pour l'userActions-->
 
     <group android:checkableBehavior="single">
 
         <item android:id="@+id/menu_home"
             android:icon="@drawable/home"
-            android:title="Home"/>
+            android:title="Home"
+            app:showAsAction="ifRoom"/>
 
         <item android:id="@+id/menu_myBooking"
             android:title="My Booking"
-            android:icon="@drawable/mybooking"/>
+            android:icon="@drawable/mybooking"
+            app:showAsAction="ifRoom"/>
 
         <item android:id="@+id/menu_Book"
             android:title="Book now"
-            android:icon="@drawable/book"/>
+            android:icon="@drawable/book"
+            app:showAsAction="ifRoom"/>
 
         <item android:id="@+id/menu_contact"
-            android:title="Contact"
-            android:icon="@drawable/contact"/>
+            android:title="Passenger"
+            android:icon="@drawable/contact"
+            app:showAsAction="ifRoom"/>
 
     </group>
 
@@ -34,7 +39,8 @@
                 <item
                     android:id="@+id/menu_logout"
                     android:title="Logout"
-                    android:icon="@drawable/logout"/>
+                    android:icon="@drawable/logout"
+                    app:showAsAction="ifRoom"/>
 
             </menu>
 
@@ -45,14 +51,15 @@
 
     <group android:checkableBehavior="single">
 
-        <item android:title="Shared">
+        <item android:title="About Us">
 
             <menu>
 
                 <item
                     android:id="@+id/menu_Shared"
-                    android:title="Share"
-                    android:icon="@drawable/share"/>
+                    android:title="About Us"
+                    android:icon="@android:drawable/ic_menu_info_details"
+                    app:showAsAction="always"/>
 
             </menu>
 
