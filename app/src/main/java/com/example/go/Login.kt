@@ -60,7 +60,7 @@ class Login : AppCompatActivity() {
         }
 
         btn_back.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, Flashscreen::class.java)
             startActivity(intent)
         }
 
@@ -70,7 +70,7 @@ class Login : AppCompatActivity() {
 
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
                 startActivity(Intent(applicationContext, Slogan::class.java))
-                finish()
+
             }
 
             override fun onVerificationFailed(e: FirebaseException) {
@@ -84,7 +84,6 @@ class Login : AppCompatActivity() {
                 Log.d("TAG","onCodeSent:$verificationId")
                 storedVerificationId = verificationId
                 resendToken = token
-
                 var intent = Intent(applicationContext,Otpvalide::class.java)
                 intent.putExtra("storedVerificationId",storedVerificationId)
                 val mobileNumber=findViewById<EditText>(R.id.phoneNumber)
@@ -92,6 +91,7 @@ class Login : AppCompatActivity() {
                 number="+237"+number
                 intent.putExtra("phone",number)
                 startActivity(intent)
+                finish()
             }
         }
     }
@@ -111,7 +111,7 @@ class Login : AppCompatActivity() {
             btn_otp.isActivated = true;
             Toast.makeText(this,"Enter mobile number", Toast.LENGTH_SHORT).show()
         }
-
+        btn_otp.isActivated = true;
     }
 
     private fun sendVerificationcode(number: String)  {

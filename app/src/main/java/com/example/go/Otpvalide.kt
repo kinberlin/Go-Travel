@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
+import kotlinx.android.synthetic.main.activity_otpvalide.*
 
 class Otpvalide : AppCompatActivity() {
     lateinit var auth: FirebaseAuth
@@ -26,13 +27,16 @@ class Otpvalide : AppCompatActivity() {
     val phonenumber = intent.getStringExtra("phone")
         var btnotp = findViewById<Button>(R.id.btnOTP)
         val otpGiven=findViewById<EditText>(R.id.id_otp)
-
-        var user = User(phonenumber ?: " ")
-        var te = user.Authenticate(phonenumber ?: " " ).isEmpty()
-        if(te){
-            user.postUser();
+        Toast.makeText(this, "Create an account to continue", Toast.LENGTH_SHORT).show()
+        var user = User(phonenumber ?: " "," "," ")
+        var userlist = user.Authenticate(phonenumber ?: " ")
+        Thread.sleep(1000L);
+        if(userlist.isEmpty()){
+            var intent = Intent(applicationContext, Signup::class.java)
+            intent.putExtra("phone",phonenumber)
+            startActivity(intent)
+            finish()
         }
-
         btnotp.setOnClickListener {
             var otp = otpGiven.text.toString()
             if(!otp.isEmpty()){
@@ -44,6 +48,9 @@ class Otpvalide : AppCompatActivity() {
                 Toast.makeText(this,"Enter OTP",Toast.LENGTH_SHORT).show()
             }
         }
+        inscrirebtn_.setOnClickListener {
+
+        }
         Thread.sleep(500L)
     }
 
@@ -51,10 +58,21 @@ class Otpvalide : AppCompatActivity() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+                    try {
 
-                        Toast.makeText(this, "Succesfull", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(applicationContext, Slogan::class.java))
-                        finish()
+                        var user = User(phonenumber ?: " ", " ", " ")
+                        var te = user.Authenticate(phonenumber ?: " " ).isEmpty()
+                        if(te){
+                            Toast.makeText(this, "Succesfull", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(applicationContext, Slogan::class.java))
+                            finish()
+                            //user.postUser();
+                        }else{
+                            Toast.makeText(this, "Vous n'etes pas encore inscrit!", Toast.LENGTH_SHORT).show()
+                        }
+
+                    }catch (e : Exception){Toast.makeText(applicationContext,e.message + " "+ e.localizedMessage, Toast.LENGTH_LONG).show()}
+
                         //Toast.makeText(this, "Create an account to continue", Toast.LENGTH_SHORT).show()
                        // var user = User(auth.currentUser!!.phoneNumber!!)
 // ...

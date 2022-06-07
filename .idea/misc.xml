@@ -4,23 +4,35 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../layout/custom_preview.xml" value="0.17291666666666666" />
+        <entry key="../../../Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.12001811594202899" />
+        <entry key="app/src/main/res/drawable/bg_btnadd.xml" value="0.318" />
+        <entry key="app/src/main/res/drawable/rounded_shapes.xml" value="0.318" />
+        <entry key="app/src/main/res/font/pacifico.xml" value="0.38645833333333335" />
+        <entry key="app/src/main/res/layout/activity__detail.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_about_us_popup.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_booking_details.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_flashscreen.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_otpvalide.xml" value="0.333786231884058" />
         <entry key="app/src/main/res/layout/activity_pop_up_window.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.333786231884058" />
         <entry key="app/src/main/res/layout/activity_ticket_share.xml" value="0.18177083333333333" />
-        <entry key="app/src/main/res/layout/available_trajet_row_item.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/available_trajet_row_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout/contact_row_item.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/depart_spinner.xml" value="1.212171052631579" />
         <entry key="app/src/main/res/layout/fragment_home_page.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/list_passenger_row_item.xml" value="0.14479166666666668" />
         <entry key="app/src/main/res/layout/my_book_row_item.xml" value="0.333786231884058" />
         <entry key="app/src/main/res/layout/my_booking_history.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/my_contact_list.xml" value="0.333786231884058" />
+        <entry key="app/src/main/res/layout/popup_input_dialog.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/profiluser.xml" value="0.333786231884058" />
         <entry key="app/src/main/res/layout/result_agence_row_item.xml" value="0.333786231884058" />
         <entry key="app/src/main/res/layout/societe_items.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/spinnertextview.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/ticket_row_item.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/town_items.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/menu/sidemenunav.xml" value="0.18177083333333333" />
       </map>
     </option>

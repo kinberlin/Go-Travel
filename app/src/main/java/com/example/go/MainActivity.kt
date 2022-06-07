@@ -9,15 +9,14 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.*
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat.startActivity
 import androidx.core.os.bundleOf
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import com.example.go.Models.Town
+import com.example.go.Models.User
 import com.example.go.activity.Passenger_Activity
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.profiluser.*
+import java.lang.Exception
 
 
 class MainActivity : AppCompatActivity() {
@@ -26,6 +25,15 @@ class MainActivity : AppCompatActivity() {
     lateinit var nvDrawer: NavigationView
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        auth = FirebaseAuth.getInstance()
+        try {
+            var user = User(auth.currentUser!!.phoneNumber ?: " ", " "," ")
+            var te = user.Authenticate(auth.currentUser!!.phoneNumber!!)
+            Thread.sleep(700)
+            var us_na = findViewById<TextView>(R.id.Username_nav)
+            Phone_number.text = auth.currentUser!!.phoneNumber
+            us_na.text = te[0].username ?: "User Not Registered"
+        }catch (ex : Exception){Toast.makeText(applicationContext, ex.message, Toast.LENGTH_SHORT)}
         menuInflater.inflate(R.menu.sidemenunav, menu)
         return super.onCreateOptionsMenu(menu)
     }
@@ -51,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
             R.id.menu_Book -> {
-                    startActivity(Intent(this,reservation_search::class.java), bundleOf())
+                    startActivity(Intent(this,MainActivity::class.java), bundleOf())
                 }
             }
         return super.onOptionsItemSelected(item)
@@ -82,7 +90,8 @@ class MainActivity : AppCompatActivity() {
 
             auth = FirebaseAuth.getInstance()
         var currentuser = auth.currentUser
-            val DefaultMain = HomePage()
+//        Username_nav.text = currentuser!!.phoneNumber ?: "Usernumber"
+        val DefaultMain = HomePage()
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.idFragments, DefaultMain)
                 commit()
@@ -110,7 +119,7 @@ class MainActivity : AppCompatActivity() {
             true
         }
     }
-
+fun present(){        Username_nav.text = auth.currentUser!!.phoneNumber ?: "User Not Registered"}
     fun selectDrawerItem(menuItem: MenuItem) {
         // Create a new fragment and specify the fragment to show based on nav item clicked
         //var fragment: Fragment? = null
@@ -121,7 +130,7 @@ class MainActivity : AppCompatActivity() {
             R.id.menu_myBooking  -> { Toast.makeText(applicationContext, "Getting bookings ...", Toast.LENGTH_LONG).show()
                 startActivity(Intent(this,Booking_history::class.java), bundleOf())
             }
-            R.id.menu_Book ->  {Toast.makeText(applicationContext, "Resultats en cours de chargement ...", Toast.LENGTH_LONG).show()
+            R.id.menu_Book ->  {Toast.makeText(applicationContext, "Home ...", Toast.LENGTH_LONG).show()
                 startActivity(Intent(this,MainActivity::class.java), bundleOf()) }
 
                 R.id.menu_logout -> {auth.signOut()

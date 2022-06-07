@@ -22,7 +22,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
-                android:layout_height="580dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
@@ -58,20 +58,22 @@
                     app:layout_constraintStart_toStartOf="@+id/textView"
                     app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+
                 <RelativeLayout
                     android:id="@+id/container_input"
-                    android:layout_width="405dp"
-                    android:layout_height="417dp"
-                    android:layout_marginTop="104dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="MissingConstraints">
 
+
                     <LinearLayout
                         android:id="@+id/form_input"
-                        android:layout_width="165dp"
+                        android:layout_width="150dp"
                         android:layout_height="86dp"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
@@ -87,46 +89,48 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
                             android:fontFamily="@font/roboto_bold"
-                            android:text="From"
+                            android:text="Depart"
                             android:textColor="@color/white"
                             android:textSize="19sp" />
 
-                        <EditText
+                        <AutoCompleteTextView
                             android:id="@+id/from_input"
-                            android:layout_width="150dp"
+                            android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_marginStart="6dp"
                             android:background="@drawable/bg_input_reservation"
                             android:drawablePadding="20dp"
+                            android:fontFamily="@font/pacifico"
                             android:hint="departtown"
                             android:textAlignment="center" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/to_input"
-                        android:layout_width="182dp"
+                        android:layout_width="150dp"
                         android:layout_height="81dp"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="0dp"
-                        android:layout_marginEnd="41dp"
+                        android:layout_marginEnd="40dp"
                         android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/totext"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
-                            android:text="To"
+                            android:text="Arriver"
                             android:textColor="@color/white"
                             android:textSize="19sp" />
 
-                        <EditText
+                        <AutoCompleteTextView
                             android:id="@+id/To_input"
-                            android:layout_width="150dp"
+                            android:layout_width="match_parent"
                             android:layout_height="57dp"
                             android:background="@drawable/bg_input_reservation"
                             android:drawablePadding="0dp"
+                            android:fontFamily="@font/pacifico"
                             android:hint="arrivaltown"
                             android:textAlignment="center" />
                     </LinearLayout>
@@ -134,7 +138,7 @@
                     <LinearLayout
                         android:id="@+id/date_input_cont"
                         android:layout_width="400dp"
-                        android:layout_height="400dp"
+                        android:layout_height="wrap_content"
                         android:layout_below="@+id/form_input"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
@@ -149,15 +153,20 @@
                             android:id="@+id/datetext"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
                             android:fontFamily="@font/roboto_bold"
                             android:text="Date"
                             android:textColor="@color/white"
                             android:textSize="19sp" />
 
-                        <CalendarView
-                            android:id="@+id/date_input"
-                            android:layout_width="400dp"
-                            android:layout_height="300dp" />
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/et_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/pacifico"
+                            android:hint="Chosissez une date" />
 
                     </LinearLayout>
 
@@ -167,6 +176,7 @@
                     android:id="@+id/searchtrip"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/bg_input_reservation"
                     android:text="Rechercher"
@@ -175,7 +185,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.471"
-                    app:layout_constraintStart_toStartOf="parent"></Button>
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/container_input"></Button>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -284,7 +295,7 @@
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/roboto_bold"
                         android:text="Destination les plus connues"
-                        android:textSize="12sp"
+                        android:textSize="18sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -355,7 +366,6 @@
                             android:fontFamily="@font/roboto_bold"
                             android:text="Description : Lorem Ipsums ............................................"
                             app:layout_constraintStart_toStartOf="parent" />
-
                     </RelativeLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

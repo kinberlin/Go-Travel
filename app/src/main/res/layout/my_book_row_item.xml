@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
+    android:outlineAmbientShadowColor="@color/BackgroundC"
+    app:cardBackgroundColor="#FFFFFF"
+    android:background="@drawable/shapes"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="201dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -26,9 +36,11 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
                 android:gravity="center"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -103,7 +115,7 @@
             <RelativeLayout
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="05dp">
+                android:layout_marginBottom="15dp">
 
                 <TextView
                     android:id="@+id/heure_depart"
@@ -146,7 +158,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/heure_arrive"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="3dp"
+                    android:layout_marginEnd="15dp"
                     android:fontFamily="@font/roboto_bold"
                     android:text="Buca Bastos"
                     android:textColor="@color/black"
@@ -162,7 +174,7 @@
                     android:layout_marginStart="20dp"
                     android:fontFamily="@font/roboto_bold"
                     android:text="2000$"
-                    android:textColor="@color/Price_color"
+                    android:textColor="@color/BackgroundC"
                     android:textSize="19sp" />
 
 
@@ -175,7 +187,7 @@
                     android:layout_marginStart="20dp"
                     android:fontFamily="@font/roboto_bold"
                     android:text="VIP"
-                    android:textColor="@color/Price_color"
+                    android:textColor="@color/BackgroundC"
                     android:textSize="19sp" />
 
                 <TextView
@@ -187,7 +199,7 @@
                     android:layout_marginStart="20dp"
                     android:fontFamily="@font/roboto_bold"
                     android:text="3 palces"
-                    android:textColor="@color/Price_color"
+                    android:textColor="@color/BackgroundC"
                     android:textSize="19sp" />
 
                 <Button
@@ -200,7 +212,7 @@
                     android:layout_marginStart="49dp"
                     android:layout_marginTop="05dp"
                     android:layout_marginEnd="61dp"
-                    android:background="@color/Price_color"
+                    android:background="@drawable/btn_otp"
                     android:text="Confirm"
                     android:textColor="@color/white" />
 
@@ -212,3 +224,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
